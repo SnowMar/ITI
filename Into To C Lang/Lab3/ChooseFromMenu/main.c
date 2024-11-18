@@ -47,15 +47,15 @@ int main() {
     data(position);
     while (1) {
         ch = getch();
-        if (ch == 0 || ch == 224) {
+        if (ch == -32) {
             ch = getch();
-            if (ch == 72) {
+            if (ch == Up) {
                 if (position > 0) {
                     position--;
                 }else{
                     position = 2;
                 }
-            } else if (ch == 80) {
+            } else if (ch == Down) {
                 if (position < 2) {
                     position++;
 
