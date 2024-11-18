@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1731867064 source:e:\cs50\day1\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1731867047 source:e:\cs50\day1\magicbox.c
+
