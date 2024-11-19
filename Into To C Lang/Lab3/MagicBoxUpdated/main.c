@@ -2,6 +2,11 @@
 #include <conio.h>
 #include <windows.h>
 
+/*
+void moveCursor(int x, int y) {
+    printf("\033[%d;%dH", y, x);
+}
+*/
 int main() {
     int n;
 
@@ -21,6 +26,7 @@ int main() {
             for (int j = 0; j < n; j++) {
                 if (i == row && j == col) {
                     printf("%d", num);
+                    Sleep(1000);
                 } else {
                     printf("   ");
                 }
