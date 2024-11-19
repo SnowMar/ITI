@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1731932009 source:e:\cs50\magicbox\main.c
-	<stdio.h>
-
-1732016701 source:e:\iti\git\iti\into to c lang\lab2\magicbox\main.c
-	<stdio.h>
-	<windows.h>
-
