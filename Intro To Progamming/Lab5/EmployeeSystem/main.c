@@ -24,30 +24,26 @@ void drawMenu(int position) {
 
     coord.X = 40;
 
-    // Menu Option: "New"
     coord.Y = 5;
     SetConsoleCursorPosition(hConsole, coord);
     SetConsoleTextAttribute(hConsole, position == 0 ? FOREGROUND_GREEN | FOREGROUND_INTENSITY : FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
     printf("New   ");
 
-    // Menu Option: "Display"
     coord.Y = 10;
     SetConsoleCursorPosition(hConsole, coord);
     SetConsoleTextAttribute(hConsole, position == 1 ? FOREGROUND_RED | FOREGROUND_INTENSITY : FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
     printf("Display");
 
-    // Menu Option: "Exit"
     coord.Y = 15;
     SetConsoleCursorPosition(hConsole, coord);
     SetConsoleTextAttribute(hConsole, position == 2 ? FOREGROUND_BLUE | FOREGROUND_INTENSITY : FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
     printf("Modify  ");
 
-        coord.Y = 20;
+    coord.Y = 20;
     SetConsoleCursorPosition(hConsole, coord);
     SetConsoleTextAttribute(hConsole, position == 3 ? FOREGROUND_GREEN | BACKGROUND_RED : FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
     printf("Exit  ");
 
-    // Reset Console Color
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 }
 
@@ -61,21 +57,19 @@ int main() {
     int running = 1;
     int employeeCount = 0;
 
-    // Array of the employeeees
     Employee employees[MAX_EMPLOYEES];
 
-    // Display the initial menu
     drawMenu(position);
 
     while (running) {
         ch = getch();
 
         if (ch == EXTENDED_KEY) {
-            ch = getch(); // Get the actual extended key code
+            ch = getch();
             if (ch == Up) {
-                position = (position == 0) ? 3 : position - 1; // Wrap around to bottom
+                position = (position == 0) ? 3 : position - 1;
             } else if (ch == Down) {
-                position = (position == 3) ? 0 : position + 1; // Wrap around to top
+                position = (position == 3) ? 0 : position + 1;
             }
             clearScreen();
             drawMenu(position);
@@ -92,7 +86,7 @@ int main() {
                     printf("Please Enter Employee ID: ");
                     scanf("%d", &employees[employeeCount].id);
 
-                    getchar(); // Clear leftover newline
+                    getchar();
                     printf("Please Enter Employee Name: ");
                     scanf("%[^\n]s", employees[employeeCount].name);
 
@@ -106,13 +100,12 @@ int main() {
                 }
 
                 printf("Employees added successfully! Press Backspace to return to the menu.\n");
-                while (getch() != Backspace); // Wait for Backspace
+                while (getch() != Backspace);
                 clearScreen();
                 drawMenu(position);
             } else if (position == 1) {
                 printf("Display Option Selected. Press Backspace to return to the main menu.\n");
 
-                // Display employee data
                 if (employeeCount == 0) {
                     printf("No employees to display.\n");
                 } else {
@@ -131,7 +124,7 @@ int main() {
                 }
 
                 printf("Press Backspace to return to the menu.\n");
-                while (getch() != Backspace); // Wait for Backspace
+                while (getch() != Backspace);
                 clearScreen();
                 drawMenu(position);
             } else if (position == 2) {
@@ -145,7 +138,7 @@ int main() {
                     if (employees[i].id == idToModify) {
                         printf("Editing Employee ID %d\n", idToModify);
                         printf("Enter New Name: ");
-                        getchar(); // Clear leftover newline
+                        getchar();
                         scanf("%[^\n]s", employees[i].name);
 
                         printf("Enter New Age: ");
@@ -165,12 +158,12 @@ int main() {
                 }
 
                 printf("Press Backspace to return to the menu.\n");
-                while (getch() != Backspace); // Wait for Backspace
+                while (getch() != Backspace);
                 clearScreen();
                 drawMenu(position);
             } else if (position == 3) {
                 printf("Exiting... Bye!\n");
-                running = 0; // Exit the main loop
+                running = 0;
             }
         }
     }
