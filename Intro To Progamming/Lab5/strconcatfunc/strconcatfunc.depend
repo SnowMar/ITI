@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1732302812 source:e:\cs50\strconcatfunc\main.c
+	<stdio.h>
+	<stdlib.h>
+	"strconcat.h"
+
+1732302417 e:\cs50\strconcatfunc\strconcat.h
+
+1732302855 source:e:\cs50\strconcatfunc\strconcat.c
+
