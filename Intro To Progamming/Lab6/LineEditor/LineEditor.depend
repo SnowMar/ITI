@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1732443935 source:e:\cs50\lineeditor\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+

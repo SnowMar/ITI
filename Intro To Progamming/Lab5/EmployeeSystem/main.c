@@ -2,12 +2,13 @@
 #include <stdlib.h>
 #include <windows.h>
 #include <conio.h>
-
 #define Up 72
 #define Down 80
 #define Enter 13
 #define Exit 27
 #define Backspace 8
+#define DELETEEE 83
+#define DELETEEE 83
 #define EXTENDED_KEY -32
 #define MAX_EMPLOYEES 1000
 
