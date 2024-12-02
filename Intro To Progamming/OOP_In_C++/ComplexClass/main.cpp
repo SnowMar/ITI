@@ -7,7 +7,6 @@ class Complex {
 
 public:
     void setRealData(int r) {
-        // Directly assigning the value of r to real without condition
         real = r;
     }
 
