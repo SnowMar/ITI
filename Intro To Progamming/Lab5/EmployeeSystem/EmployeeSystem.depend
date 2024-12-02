@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1732389031 source:e:\iti\git\iti\intro to progamming\lab5\employeesystem\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+
