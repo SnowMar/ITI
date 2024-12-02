@@ -125,6 +125,22 @@ int main() {
     cout << "B: ";
     b.display();
 
+    cout<<"=============================================================="<<endl;
+    swapByValue(a, b);
+    cout << "After swapByValue:" << endl;
+    cout << "A: ";
+    a.display();
+    cout << "B: ";
+    b.display();
+
+    cout<<"=============================================================="<<endl;
+    swapByAddress(&a, &b);
+    cout << "After swapByAddress:" << endl;
+    cout << "A: ";
+    a.display();
+    cout << "B: ";
+    b.display();
+
     Complex *ptr1 = new Complex();
     Complex *ptr2 = new Complex();
 
