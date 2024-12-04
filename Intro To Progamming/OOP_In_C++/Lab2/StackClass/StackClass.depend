@@ -2,3 +2,9 @@
 1733256751 source:e:\cs50\stackclass\main.cpp
 	<iostream>
 
+1733337929 source:e:\iti\git\iti\intro to progamming\oop_in_c++\lab2\stackclass\main.cpp
+	<iostream>
+	<windows.h>
+	<conio.h>
+	<string>
+
