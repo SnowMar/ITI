@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1733423575 source:e:\iti\git\iti\intro to progamming\oop_in_c++\lab4\stringlab\main.cpp
+	<iostream>
+	<cstring>
+
