@@ -1,4 +1,4 @@
-#include "Rect.h"
+/*#include "Rect.h"
 
 Rect::Rect()
 {
@@ -9,3 +9,4 @@ Rect::~Rect()
 {
     //dtor
 }
+*/

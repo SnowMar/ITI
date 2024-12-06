@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1733514246 source:e:\iti\git\iti\intro to progamming\oop_in_c++\lab4\draw\src\line.cpp
+
+1733514249 source:e:\iti\git\iti\intro to progamming\oop_in_c++\lab4\draw\src\point.cpp
+
+1733514254 source:e:\iti\git\iti\intro to progamming\oop_in_c++\lab4\draw\src\rect.cpp
+
+1733514634 source:e:\iti\git\iti\intro to progamming\oop_in_c++\lab4\draw\main.cpp
+	<iostream>
+	"C:\Program Files\CodeBlocks\MinGW\include\graphics.h"
+
+1733513615 c:\program files\codeblocks\mingw\include\graphics.h
+	<windows.h>
+	<limits.h>
+	<sstream>
+
