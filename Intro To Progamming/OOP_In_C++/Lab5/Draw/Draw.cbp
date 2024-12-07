@@ -32,7 +32,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Line.h" />
+		<Unit filename="include/Point.h" />
+		<Unit filename="include/Rect.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Line.cpp" />
+		<Unit filename="src/Point.cpp" />
+		<Unit filename="src/Rect.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
