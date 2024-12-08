@@ -1,11 +1,6 @@
-//#include <iostream>
-//#include "graphics.h" // Ensure this is installed and properly linked
-
-
-
-#include <C:\Program Files\CodeBlocks\MinGW\include\iostream>
+#include <iostream>
 #include <C:\Program Files\CodeBlocks\MinGW\include\graphics.h>
-#include <C:\Program Files\CodeBlocks\MinGW\include\conio.h>
+#include <conio.h>
 using namespace std;
 
 // Base class Paint
@@ -94,7 +89,7 @@ class Picture {
     Paint** shapes;     // Array of pointers to Paint objects
 
 public:
-    Picture() : shapeCount(0), shapes(nullptr) {}
+    Picture() : shapeCount(0), shapes() {}
 
     Picture(int count, Paint** pShapes) : shapeCount(count), shapes(pShapes) {}
 

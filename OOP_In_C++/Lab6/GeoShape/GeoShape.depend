@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1733663717 source:e:\iti\git\iti\oop_in_c++\lab6\geoshape\main.cpp
+	<iostream>
+	<conio.h>
+
