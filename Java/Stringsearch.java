@@ -19,10 +19,8 @@ public class Stringsearch {
            if (part.equals(pattern)) {
                count++;
            }
-       }
-       System.out.println(count);
-
+        }
+        System.out.println(count);
     }
-    
 }
 
