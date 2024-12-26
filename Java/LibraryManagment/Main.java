@@ -1,16 +1,29 @@
-import library.Book;
+import clients.Clients;
+import library.Library;
+import library.items.*;
+import library.exceptions.libExceptions;
 
 public class Main {
     public static void main(String[] args) {
         Library library = new Library();
-        library.addLibraryItem(new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925));
-        library.addLibraryItem(new Book("To Kill a Mockingbird", "Harper Lee", 1960));
-        library.addLibraryItem(new Book("1984", "George Orwell", 1949));
-        library.addLibraryItem(new Book("Pride and Prejudice", "Jane Austen", 1813));
-        library.addLibraryItem(new Book("The Catcher in the Rye", "J.D. Salinger", 1951));
-        library.addLibraryItem(new Book("The Hobbit", "J.R.R. Tolkien", 1937));
-        library.addLibraryItem(new Book("The Lord of the Rings", "J.R.R. Tolkien", 1954));
-        library.addLibraryItem(new Book("Animal Farm", "George Orwell", 1945));
-        library.addLibraryItem(new Book("Brave New World", "Aldous Huxley", 1932));
-        library.addLibraryItem(new Book("The Grapes of Wrath", "John Steinbeck", 1939));
-        library.addLibraryItem(new Book
+        Clients client = new Clients("Alice", "C123");
+
+        library.addItem(new Book("The Great Gatsby", "B001", "F. Scott Fitzgerald"));
+        library.addItem(new Magazine("Time Magazine", "M001", 42));
+
+        System.out.println("Library Items:");
+        for (LibraryItem item : library.getAllItems()) {
+            System.out.println(item);
+        }
+
+        try {
+            System.out.println("\nSearching for item with ID 'B001':");
+            System.out.println(library.findItemById("B001"));
+        } catch (libExceptions e) {
+            System.err.println(e.getMessage());
+        }
+
+        System.out.println("\nClient Details:");
+        System.out.println(client);
+    }
+}
