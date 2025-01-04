@@ -5,7 +5,7 @@ public class Solution {
         TreeMap<String, List<String>> map = new TreeMap<>();
 
         String[] fruits = {
-            "apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", 
+            "apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeyd  ew", 
             "imbe", "jackfruit", "kiwi", "lemon", "mango", "nectarine", "orange", "pear", 
             "quince", "raspberry", "strawberry", "tangerine", "ugli", "vanilla", "watermelon", 
             "ximenia", "yuzu", "zuchinni", "another", "butter", "candy", "dandy", "elephant"

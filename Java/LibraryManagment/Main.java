@@ -10,15 +10,15 @@ public class Main {
 
         library.addItem(new Book("The Great Gatsby", "B001", "F. Scott Fitzgerald"));
         library.addItem(new Magazine("Time Magazine", "M001", 42));
+        library.addItem(new DVD("SpiderMan", "2022","Magnetic"));
 
         System.out.println("Library Items:");
         for (LibraryItem item : library.getAllItems()) {
-            System.out.println(item);
+            System.out.println(item + "\n");
         }
 
         try {
-            System.out.println("\nSearching for item with ID 'B001':");
-            System.out.println(library.findItemById("B001"));
+            System.out.println(library.findItemById("2022"));
         } catch (libExceptions e) {
             System.err.println(e.getMessage());
         }
