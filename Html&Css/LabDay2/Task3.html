@@ -31,6 +31,24 @@
     input[type="submit"]:hover {
       background-color: #0056b3;
     }
+    .comments-section {
+    background-image: url('background.jpg');
+    padding: 20px;
+    border: 2px solid #ccc;
+}
+
+.comment {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.comment-form {
+    padding: 20px;
+    background-color: #fff;
+}
+
   </style>
 </head>
 <body>
@@ -46,5 +64,25 @@
 
     <input type="submit" value="Submit">
   </form>
+
+<h1>=====================================================================================</h1>
+<section class="comments-section">
+  <article class="comment">
+      <header>
+          <h3>Mohamed</h3>
+          <time datetime="2025-01-07">January 7, 2025</time>
+      </header>
+      <p>This is a Mohamed's comment.</p>
+  </article>
+  <article class="comment-form">
+      <form>
+          <label for="user-comment">Your Comment:</label>
+          <textarea id="user-comment"></textarea>
+          <button type="submit">Submit</button>
+      </form>
+  </article>
+</section>
+
+
 </body>
 </html>

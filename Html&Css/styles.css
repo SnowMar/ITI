@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    margin-bottom: 10px;
+}
+
+form {
+    margin: 20px 0;
+    padding: 10px;
+    border: 2px solid #ddd;
+    background-color: #fff;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+
+input[type="radio"] {
+    margin: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.comments-section {
+    background-image: url('background.jpg');
+    padding: 20px;
+    border: 2px solid #ccc;
+}
+
+.comment {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.comment-form {
+    padding: 20px;
+    background-color: #fff;
+}
+
+fieldset {
+    border: 2px solid #333;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+}
+
+.box {
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    margin: 10px;
+}
+
+.box1 {
+    width: 150px;
+    height: 150px;
+    background-color: #ff5733;
+    padding: 20px;
+    border: 5px solid #900;
+}
+
+.box2 {
+    width: 200px;
+    height: 100px;
+    background-color: #33c3ff;
+    padding: 10px;
+    border: 3px dashed #009;
+}
+
+.box3 {
+    width: 120px;
+    height: 180px;
+    background-color: #33ff57;
+    padding: 15px;
+    border: 2px solid #090;
+}

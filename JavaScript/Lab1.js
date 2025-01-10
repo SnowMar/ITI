@@ -1,10 +1,11 @@
 function isPalindromeNumber(num) {
+    if(num < 0) {console.log("Number is not palindrome");}
     const str = num.toString();
     const reversedStr = str.split('').reverse().join('');
     return str === reversedStr;
 }
 
-console.log(isPalindromeNumber(531135));
+console.log(isPalindromeNumber(-531135));
 console.log("=====================================");
 
 function calculateDiscountedPrice(price, discount) {
@@ -34,7 +35,7 @@ console.log(test[test.length - 1]);
 
 console.log(test.slice(-1)[0]);
 
-const lastItem = test.pop();
+let lastItem = test.pop();
 console.log(lastItem);
 test.push(lastItem);
 
@@ -44,9 +45,9 @@ console.log(test);
 
 
 console.log("=====================================");
-var longestWord = 'Web Development Tutorial'
+var longestWord = 'Web Development Tutorial '
 
-var longestWord = longestWord.split(' ').reduce((a, b) => a.length > b.length ? a : b);
+var longestWord = longestWord.split(' ').reduce((a , b) => a.length > b.length ? a : b);
 
 console.log("The longest word is: " + longestWord);
 
