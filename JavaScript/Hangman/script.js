@@ -3,9 +3,11 @@ const chosenWord = words[Math.floor(Math.random() * words.length)];
 const wordContainer = document.getElementById("word");
 const lettersContainer = document.getElementById("letters");
 const messageContainer = document.getElementById("message");
+const timerContainer = document.getElementById("timer");
 
 let revealedWord = Array(chosenWord.length).fill("_");
 let attempts = 6;
+let timeLeft = 60;
 
 function renderWord() {
     wordContainer.textContent = revealedWord.join(" ");
@@ -37,17 +39,25 @@ function handleLetterClick(letter, button) {
     } else {
         attempts--;
         if (attempts === 0) {
-            messageContainer.textContent = `Game Over! The word was: ${chosenWord}`;
-            disableAllButtons();
+            endGame(false);
         }
     }
 }
 
 function checkWin() {
     if (!revealedWord.includes("_")) {
-        messageContainer.textContent = "Congratulations! You guessed the word!";
-        disableAllButtons();
+        endGame(true);
     }
+}
+
+function endGame(win) {
+    disableAllButtons();
+    if (win) {
+        messageContainer.textContent = "Congratulations! You guessed the word!";
+    } else {
+        messageContainer.textContent = `Game Over! The word was: ${chosenWord}`;
+    }
+    clearInterval(timerInterval);
 }
 
 function disableAllButtons() {
@@ -55,5 +65,17 @@ function disableAllButtons() {
     buttons.forEach(button => button.classList.add("disabled"));
 }
 
+function startTimer() {
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        timerContainer.textContent = `Time Left: ${timeLeft} seconds`;
+        if (timeLeft === 0) {
+            endGame(false);
+        }
+    }, 1000);
+}
+
+let timerInterval;
 renderWord();
 createLetterButtons();
+startTimer();
