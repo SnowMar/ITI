@@ -1,11 +1,23 @@
-const words = ["javascript", "hangman", "programming", "html", "coding"];
+import { categories } from './data.js';
+
+const categoryNames = Object.keys(categories);
+const chosenCategory = categoryNames[Math.floor(Math.random() * categoryNames.length)];
+const words = categories[chosenCategory];
 const chosenWord = words[Math.floor(Math.random() * words.length)];
+const hint = chosenWord.hint;
+
+
+const cat = document.getElementById("category");
+cat.textContent = `Category: ${chosenCategory}`;
 const wordContainer = document.getElementById("word");
 const lettersContainer = document.getElementById("letters");
 const messageContainer = document.getElementById("message");
 const timerContainer = document.getElementById("timer");
+const livesContainer = document.getElementById("lives");
 
-let revealedWord = Array(chosenWord.length).fill("_");
+
+
+let revealedWord = Array(chosenWord.name.length).fill("_");
 let attempts = 6;
 let timeLeft = 60;
 
@@ -24,20 +36,35 @@ function createLetterButtons() {
     });
 }
 
+function renderLives() {
+    livesContainer.innerHTML = "";
+    for (let i = 0; i < attempts; i++) {
+        const heart = document.createElement("span");
+        heart.textContent = "❤"; 
+        heart.style.color = "red";
+        heart.style.margin = "0 5px";
+        livesContainer.appendChild(heart);
+    }
+}
+
+
 function handleLetterClick(letter, button) {
     button.classList.add("disabled");
     button.removeEventListener("click", handleLetterClick);
 
-    if (chosenWord.includes(letter)) {
-        chosenWord.split("").forEach((char, index) => {
+    if (chosenWord.name.includes(letter)) {
+        chosenWord.name.split("").forEach((char, index) => {
             if (char === letter) {
                 revealedWord[index] = letter;
             }
         });
         renderWord();
         checkWin();
+        timeLeft = 60;
     } else {
         attempts--;
+        renderLives();
+        timeLeft = 60;
         if (attempts === 0) {
             endGame(false);
         }
@@ -55,7 +82,7 @@ function endGame(win) {
     if (win) {
         messageContainer.textContent = "Congratulations! You guessed the word!";
     } else {
-        messageContainer.textContent = `Game Over! The word was: ${chosenWord}`;
+        messageContainer.textContent = `Game Over! The word was: ${chosenWord.name}`;
     }
     clearInterval(timerInterval);
 }
@@ -75,7 +102,16 @@ function startTimer() {
     }, 1000);
 }
 
-let timerInterval;
+document.getElementById("restart").onclick = function() {
+    location.reload();
+};
+
+document.getElementById("hintBtn").onclick = function() {
+    const hintContainer = document.getElementById("hint");
+    hintContainer.textContent = `Hint: ${hint}`;
+};
+
 renderWord();
 createLetterButtons();
+renderLives();
 startTimer();
