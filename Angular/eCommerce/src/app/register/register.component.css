@@ -1,0 +1,76 @@
+.container {
+    background-color: #f3f4f6; /* Slightly darker background for better contrast */
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px; /* Added padding for better spacing */
+}
+
+form {
+    background-color: #ffffff; /* Form background */
+    padding: 25px;
+    border: 1px solid #3b82f6; /* Primary border */
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+form h1 {
+    color: #111827; /* Darker heading color for better readability */
+    text-align: center;
+    font-size: 24px; /* Increased font size */
+    margin-bottom: 20px; /* Added margin for spacing */
+}
+
+label {
+    margin-bottom: 8px;
+    color: #374151; /* Slightly darker label text color */
+    font-size: 15px; /* Increased font size */
+    display: block; /* Ensure labels are block elements */
+}
+
+input {
+    border: 1px solid #d1d5db; /* Input border */
+    padding: 12px;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Added transition for box-shadow */
+    width: 100%; /* Full width inputs */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+input:focus {
+    border-color: #3b82f6; /* Focus border color */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* Focus shadow for better visibility */
+}
+
+.label-text-alt {
+    font-size: 13px; /* Slightly increased font size */
+    margin-top: 5px;
+    color: #6b7280; /* Secondary text color */
+}
+
+.text-error {
+    color: #ef4444; /* Error text color */
+    font-size: 13px; /* Slightly increased font size */
+}
+
+.btn {
+    background-color: #3b82f6; /* Button background */
+    color: #ffffff;
+    padding: 12px 20px; /* Increased padding */
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.3s; /* Added transition for transform */
+    cursor: pointer; /* Pointer cursor for buttons */
+    display: inline-block; /* Ensure buttons are inline-block */
+    text-align: center; /* Center text */
+}
+
+.btn:hover {
+    background-color: #2563eb; /* Hover background */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+a {
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.3s; /* Added transition for color */
+}

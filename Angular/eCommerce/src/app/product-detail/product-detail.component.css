@@ -1,0 +1,138 @@
+.product-detail {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  .image-gallery {
+    flex: 1;
+  }
+  
+  .main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .thumbnails {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .thumbnails img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+  
+  .thumbnails img.active {
+    border-color: #007bff;
+  }
+  
+  .product-info {
+    flex: 1;
+  }
+  
+  .product-info h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  .product-info .description {
+    margin: 1rem 0;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .product-info .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .ratings {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .ratings .stars {
+    color: #ffc107;
+  }
+  
+  .ratings .reviews {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .stock {
+    margin: 1rem 0;
+    font-weight: bold;
+  }
+  
+  .stock.in-stock {
+    color: green;
+  }
+  
+  .stock.out-of-stock {
+    color: red;
+  }
+  
+  .additional-info {
+    margin: 1rem 0;
+  }
+  
+  .additional-info button {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+    cursor: pointer;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .quantity-selector button {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .quantity-selector input {
+    width: 50px;
+    text-align: center;
+  }
+  
+  .buy-now,
+  .add-to-cart {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buy-now {
+    background: #28a745;
+    color: white;
+  }
+  
+  .add-to-cart {
+    background: #007bff;
+    color: white;
+  }
+  

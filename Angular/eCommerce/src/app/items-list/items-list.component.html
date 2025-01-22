@@ -1,0 +1,19 @@
+<div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      @for(item of products; track item.id){
+      <div class="col">
+        <div class="col">
+            <div class="card h-100">
+              <img [src]="item.images[0]" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{item.title}}</h5>
+                <p class="card-text">{{item.description}}</p>
+                <p class="card-text"><strong>Price:</strong> {{item.price}}</p>
+                <button class="btn btn-primary" (click)="redirectToProductDetails(item.id)">Buy Now</button>
+            </div>
+            </div>
+          </div>
+      </div>
+      }
+    </div>
+  </div>
