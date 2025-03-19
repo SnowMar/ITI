@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+form {
+    background: white;
+    width: 50vw;
+    height: 120vh;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+h2 {
+    grid-column: span 2;
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+label {
+    font-weight: 600;
+    color: #444;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Focus Effect */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #6a11cb;
+    outline: none;
+    box-shadow: 0px 0px 6px rgba(106, 17, 203, 0.4);
+}
+
+/* Gender & Skills Section */
+.radio-group, .checkbox-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Styling for Radio & Checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #6a11cb;
+}
+
+/* Full Width Elements */
+textarea, select {
+    grid-column: span 2;
+}
+
+/* Buttons */
+.buttons {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+    margin: 0 5px;
+}
+
+input[type="submit"] {
+    background: #6a11cb;
+}
+
+input[type="reset"] {
+    background: #ff4b5c;
+}
+
+input[type="submit"]:hover {
+    background: #530dc7;
+}
+
+input[type="reset"]:hover {
+    background: #d43f50;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+    form {
+        width: 80vw;
+        height: auto;
+        grid-template-columns: 1fr;
+    }
+    
+    textarea, select, .buttons {
+        grid-column: span 1;
+    }
+}
+
+.captcha-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.captcha-container img {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
