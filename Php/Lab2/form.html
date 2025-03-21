@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-field {
+            border: 2px solid #ff4b5c !important;
+            background-color: #fff8f8;
+        }
+        .error-message {
+            color: #ff4b5c;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .error-list {
+            background-color: #fff8f8;
+            border: 1px solid #ff4b5c;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 20px;
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <form action="done.php" method="POST">
+        <h2>Registration</h2>
+        
+        <div id="errorContainer" class="error-list" style="display: none;"></div>
+
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label>Gender:</label>
+        <div class="radio-group">
+            <input type="radio" id="gender_male" name="gender" value="Male" required> Male
+            <input type="radio" id="gender_female" name="gender" value="Female"> Female
+        </div>
+
+        <label for="captcha">Enter CAPTCHA:</label>
+        <div class="captcha-container">
+            <img src="checker.php" alt="CAPTCHA Image">
+            <input type="text" id="captcha" name="captcha" required>
+        </div>
+
+        <div class="buttons">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+
+    <script>
+        function getUrlParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const pairs = queryString.split('&');
+            
+            for (const pair of pairs) {
+                const [key, value] = pair.split('=');
+                if (key && value) {
+                    params[decodeURIComponent(key)] = decodeURIComponent(value);
+                }
+            }
+            
+            return params;
+        }
+
+        function populateFormFields() {
+            const params = getUrlParams();
+            
+            if (params.first_name) document.getElementById('first_name').value = params.first_name;
+            if (params.last_name) document.getElementById('last_name').value = params.last_name;
+            if (params.email) document.getElementById('email').value = params.email;
+            
+            if (params.gender) {
+                if (params.gender === 'Male') {
+                    document.getElementById('gender_male').checked = true;
+                } else if (params.gender === 'Female') {
+                    document.getElementById('gender_female').checked = true;
+                }
+            }
+            
+            if (params.invalid_fields) {
+                try {
+                    const invalidFields = JSON.parse(params.invalid_fields);
+                    
+                    invalidFields.forEach(field => {
+                        const element = document.getElementById(field);
+                        if (element) {
+                            element.classList.add('error-field');
+                        }
+                        
+                        if (field === 'gender') {
+                            document.getElementById('gender_male').parentElement.classList.add('error-field');
+                        }
+                    });
+                } catch (e) {
+                    console.error('Error parsing invalid fields:', e);
+                }
+            }
+            
+            if (params.errors) {
+                try {
+                    const errors = JSON.parse(params.errors);
+                    if (errors.length > 0) {
+                        const errorContainer = document.getElementById('errorContainer');
+                        errorContainer.style.display = 'block';
+                        
+                        const errorList = document.createElement('ul');
+                        errors.forEach(error => {
+                            const listItem = document.createElement('li');
+                            listItem.textContent = error;
+                            errorList.appendChild(listItem);
+                        });
+                        
+                        errorContainer.appendChild(errorList);
+                    }
+                } catch (e) {
+                    console.error('Error parsing errors:', e);
+                }
+            }
+        }
+        
+        window.onload = populateFormFields;
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+body { 
+    font-family: Arial, sans-serif; 
+    padding: 20px;
+    background-color: #f4f7fc;
+}
+h2 {
+    color: #333;
+    border-bottom: 2px solid #6a11cb;
+    padding-bottom: 10px;
+}
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+th, td { 
+    border: 1px solid #eee; 
+    padding: 12px; 
+    text-align: left; 
+}
+th { 
+    background: #6a11cb; 
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #f0f0f0;
+}
+.error { color: red; }
+.delete-btn { 
+    color: white; 
+    background-color: #ff4b5c;
+    text-decoration: none; 
+    padding: 5px 10px; 
+    border-radius: 5px;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+.delete-btn:hover {
+    background-color: #d43f50;
+}
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-primary {
+    background-color: #6a11cb;
+}
+.btn-secondary {
+    background-color: #2575fc;
+}
+.btn:hover {
+    opacity: 0.9;
+}
+.no-records {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #666;
+}
+.count-info {
+    background-color: #e3f2fd;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #2575fc;
+}
