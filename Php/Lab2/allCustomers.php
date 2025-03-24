@@ -64,7 +64,6 @@ $customers = file_exists(FILE_NAME) ? file(FILE_NAME, FILE_IGNORE_NEW_LINES) : [
 
 <div class="button-container">
     <a href="form.html" class="btn btn-primary">Add New Customer</a>
-    <a href="done.php" class="btn btn-secondary">Back to Registration</a>
 </div>
 
 </body>

@@ -33,24 +33,44 @@ public:
             this->tail = newNode;
         }
     }
+
+    LinkedListNode *findNode(LinkedListNode *nodeTobeFound){
+        LinkedListNode *current = this->head;
+        while(current != NULL && current->data != nodeTobeFound->data){
+                current = current->next;
+                return current->data;
+        }
+        return NULL;
+    }
+
+    void insertAfter(LinkedListNode *node, int _data){
+        LinkedListNode *newNode = new LinkedListNode(_data);
+        findNode(node);
+
+        newNode->next = node->next;
+        node->next = newNode;
+    }
+
     void printList(){
         LinkedListNode *current = this->head;
         while(current != NULL){
-            cout<<current->data;
+            cout<<current->data<<"->";
             current = current->next;
         }
+        cout<<endl;
     }
 
     void removeItem(int _data){
         LinkedListNode *current = this->head;
+        LinkedListNode *previous = NULL;
 
-        for(; current->data != _data; current = current->next)
-            cout<<"Worked";
+        while(current != NULL && current->data != _data){
+            previous = current;
+            current = current->next;
+        }
 
-        /*if(_data != current->data){
-            current = current->next
-        }*/
-
+        previous->next = current->next;
+        delete current;
     }
 
 };
@@ -68,6 +88,10 @@ int main()
     test.insertLast(60);
     test.insertLast(70);
     test.insertLast(80);
-    test.removeItem(80);
+    test.printList();
+    test.removeItem(60);
+    test.printList();
+    test.insertAfter(test.findNode(70),75);
+    test.printList();
     return 0;
 }

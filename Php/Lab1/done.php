@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     echo "<h2>Review</h2>";
-    echo "<p>Thanks ($gender) $fname $lname</p>";
+    echo "<p>Thanks $gender $fname $lname</p>";
     echo "<h3>Please Review Your Information</h3>";
     echo "<p>Name: $fname $lname</p>";
     echo "<p>Address: $address</p>";
@@ -29,6 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     unset($_SESSION['captcha']);
 
 } else {
-    die("⚠ Invalid request. Please submit the form properly. <a href='index.html'>Go back</a>");
+    die("⚠ Invalid request. Please submit the form properly. <a href='form.html'>Go back</a>");
 }
 ?>

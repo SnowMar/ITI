@@ -11,20 +11,6 @@ function isValidEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
-function deleteRecord($index) {
-    $records = file(FILE_NAME, FILE_IGNORE_NEW_LINES);
-    if (isset($records[$index])) {
-        unset($records[$index]);
-        file_put_contents(FILE_NAME, implode("\n", $records) . "\n");
-    }
-}
-
-if (isset($_GET['delete'])) {
-    deleteRecord($_GET['delete']);
-    header("Location: done.php");
-    exit();
-}
-
 $firstName = '';
 $lastName = '';
 $email = '';
