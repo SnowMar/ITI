@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Form Binding</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        .hidden { display: none; }
+        .box { border: 1px solid #ddd; padding: 10px; margin: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <div v-if="!submitted">
+        <h2>Task 2: Form Binding</h2>
+        
+        <label>Post Title:</label>
+        <input type="text" v-model="postData.title"><br><br>
+
+        <label>Category:</label>
+        <div v-for="cat in postData.category" :key="cat">
+            <input type="radio" v-model="selectedCategory" :value="cat"> {{ cat }}
+        </div>
+        
+        <br>
+        <label>Edition:</label>
+        <select v-model="selectedEdition">
+            <option v-for="edition in postData.series" :key="edition" :value="edition">{{ edition }}</option>
+        </select>
+        
+        <br><br>
+        <label>Social Networks:</label>
+        <div v-for="network in postData.socialnetworks" :key="network">
+            <input type="checkbox" v-model="selectedNetworks" :value="network"> {{ network }}
+        </div>
+
+        <br>
+        <label>Publish Now:</label>
+        <input type="checkbox" v-model="publishShow">
+        
+        <br><br>
+        <button @click="submitForm">Next</button>
+    </div>
+
+    <div v-if="submitted" class="box">
+        <h3>Submitted Data:</h3>
+        <p><strong>Title:</strong> {{ postData.title }}</p>
+        <p><strong>Category:</strong> {{ selectedCategory }}</p>
+        <p><strong>Edition:</strong> {{ selectedEdition }}</p>
+        <p><strong>Networks:</strong> {{ selectedNetworks.join(", ") }}</p>
+        <p><strong>Publish Show:</strong> {{ publishShow ? "True" : "False" }}</p>
+        <button @click="resetForm">Back</button>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            submitted: false,
+            postData: {
+                title: "IP Address",
+                category: ["design", "network", "database", "development"],
+                series: ["first", "second", "third"],
+                socialnetworks: ["facebook", "X", "youtube", "instagram"]
+            },
+            selectedCategory: "network",
+            selectedEdition: "second",
+            selectedNetworks: ["facebook", "X"],
+            publishShow: true
+        },
+        methods: {
+            submitForm() {
+                this.submitted = true;
+            },
+            resetForm() {
+                this.submitted = false;
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
